@@ -21,12 +21,12 @@ class Fusion(CrawlSpider):
 		ls =[ i.url for i in  LinkExtractor(allow='').extract_links(response)]
 		for i in ls:
 			if re.compile('file').search(i):
-				yield response.follow(i,callback=self.downld)
+				yield response.follow(i,callback=self.fileparse)
 
-	def downld(self,response):
+	def fileparse(self,response):
 		url = response.urljoin(response.xpath('/html/body/h2[2]/a/@href').get())
 		name = url.split('/')[-1]
 		yield{
-			"url":url,
-			"name":name
+			"name":name,
+			"url":url
 					}
