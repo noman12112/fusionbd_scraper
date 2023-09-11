@@ -7,7 +7,8 @@ you will need scrapy framework of python to be installed on your device.
 
 *pip install scrapy*
 
-**If you are ready to go to unleash this spider**
+**If you are ready to unleash this spider**
+
 **just type ::**
 
 *scrapy runspider all.py -o exmple.json*
